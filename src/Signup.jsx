@@ -22,19 +22,29 @@ const Signup = () => {
     function setData(e) {
         e.preventDefault();
 
-        for (var i = 0; i < users.length; i++) {
-            if (users[i].username === obj.username) {
-                alert('username already exist');
-                break;
-            }
-            else if (users[i].username !== obj.username && i === users.length - 1) {
-                dispatch({ type: 'Signup', payload: obj });
-                setFirstname('');
-                setLastname('');
-                setUsername('');
-                setPassword('');
-                navigate('/');
-                break;
+        if (users.length === 0) {
+            dispatch({ type: 'Signup', payload: obj });
+            setFirstname('');
+            setLastname('');
+            setUsername('');
+            setPassword('');
+            navigate('/');
+        }
+        else {
+            for (var i = 0; i < users.length; i++) {
+                if (users[i].username === obj.username) {
+                    alert('username already exist');
+                    break;
+                }
+                else if (users[i].username !== obj.username && i === users.length - 1) {
+                    dispatch({ type: 'Signup', payload: obj });
+                    setFirstname('');
+                    setLastname('');
+                    setUsername('');
+                    setPassword('');
+                    navigate('/');
+                    break;
+                }
             }
         }
     }
