@@ -1,17 +1,5 @@
 const initialState = {
-    users: [{
-        firstname: 'hello',
-        lastname: 'bye',
-        username: 'bisma',
-        password: 'abc'
-        
-    },
-    {
-        firstname: 'hello1',
-        lastname: 'bye1',
-        username: 'anum',
-        password: 'bcd'
-    }],
+    users: [],
     employees: [],
     isLoggedIn: false,
     currentUser: {}
